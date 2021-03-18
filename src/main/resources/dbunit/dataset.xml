@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    
+    <TB_CONSOLE txt_nome="Mega Drive" txt_fabricante="Sega" num_ano="1989"/>
+    <TB_CONSOLE txt_nome="Super Nintendo" txt_fabricante="Nintendo" num_ano="1987"/>
+    <TB_CONSOLE txt_nome="Nintendo 64" txt_fabricante="Nintendo" num_ano="1996"/>
+    <TB_CONSOLE txt_nome="Neo-geo" txt_fabricante="SNK" num_ano="1988"/>
+    <TB_CONSOLE txt_nome="Atari" txt_fabricante="Atari" num_ano="1970"/>
+    
+    
+    <TB_JOGO id_console="1" txt_nome="Sonic the Hedgehog" dt_lancamento = "1991-10-10"/>
+    <TB_JOGO id_console="1" txt_nome="Streets of Rage" dt_lancamento = "1992-03-25"/>
+
+    <TB_JOGO id_console="2" txt_nome="Super Metroid" dt_lancamento = "1993-08-04"/>
+    <TB_JOGO id_console="2" txt_nome="Earthbound" dt_lancamento = "1994-07-01"/>
+
+    <TB_JOGO id_console="3" txt_nome="Banjo Kazooie" dt_lancamento = "2000-01-01"/>
+    <TB_JOGO id_console="3" txt_nome="Super Smash Bros." dt_lancamento = "2000-06-06"/>
+
+    <TB_JOGO id_console="4" txt_nome="Metal Slug" dt_lancamento = "1995-03-03"/>
+    <TB_JOGO id_console="4" txt_nome="Samurai Shodown" dt_lancamento = "1996-02-03"/>
+    <TB_JOGO id_console="4" txt_nome="Spider Man" dt_lancamento = "1996-02-03"/>
+
+    <TB_USUARIO disc_usuario="J" txt_nickname="zxasddd" txt_email="zxasddd@gmail.com" txt_senha="MEGA_drive" dt_criacao = "2020-01-01" dt_ultimo_login = "2020-01-01"/>
+    <TB_JOGADOR id_usuario="1" num_pontos="1000"/>
+ 
+    <TB_USUARIO disc_usuario="J" txt_nickname="starguardian" txt_email="starrrrr@gmail.com" txt_senha="Nintend0*" dt_criacao = "2019-10-10" dt_ultimo_login = "2021-02-02"/>
+    <TB_JOGADOR id_usuario="2" num_pontos="250"/>
+ 
+    <TB_USUARIO disc_usuario="J" txt_nickname="supergamerz" txt_email="gamer@gamer.org" txt_senha="ViDeOgAmE" dt_criacao = "2019-08-01" dt_ultimo_login = "2021-01-25"/>
+    <TB_JOGADOR id_usuario="3" num_pontos="400"/>
+ 
+    <TB_USUARIO disc_usuario="A" txt_nickname="mestresonic" txt_email="mastersonic@google.com" txt_senha="Sonic_1234" dt_criacao = "2015-01-01" dt_ultimo_login = "2021-01-20"/>
+    <TB_ADMINISTRADOR id_usuario="4"/>
+    
+    <TB_USUARIO disc_usuario="A" txt_nickname="doomguy" txt_email="doom@yahoo.com" txt_senha="IDDQD112!d" dt_criacao = "2014-01-01" dt_ultimo_login = "2021-01-22"/>
+    <TB_ADMINISTRADOR id_usuario="5"/>
+    
+    <TB_USUARIO disc_usuario="A" txt_nickname="laracroft" txt_email="tombraider@eidos.com" txt_senha="TombRaider123!" dt_criacao = "2016-01-01" dt_ultimo_login = "2018-04-17"/>
+    <TB_ADMINISTRADOR id_usuario="6"/>
+    
+    <TB_USUARIO disc_usuario="A" txt_nickname="adminmaster" txt_email="admin@master.master" txt_senha="MASTERrrrR123***" dt_criacao = "2016-01-01" dt_ultimo_login = "2018-04-17"/>
+    <TB_ADMINISTRADOR id_usuario="7"/>
+    
+    <TB_CONQUISTA txt_nome="Black Cat" txt_descricao="Conquiste sete vidas" num_pontos="100" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Green Hill 1" txt_descricao="Termine Green Hill Zone Act 1" num_pontos="50" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Green Hill 2" txt_descricao="Termine Green Hill Zone Act 2" num_pontos="60" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Green Hill 3" txt_descricao="Termine Green Hill Zone Act 3" num_pontos="70" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Green Hill Perfect Boss" txt_descricao="Termine Green Hill Zone Act 3 e vença Robotnik sem tomar cano" num_pontos="200" id_jogo="1" id_administrador="1"/>    
+    <TB_CONQUISTA txt_nome="Marble Zone 1" txt_descricao="Termine Marble Zone Act 1" num_pontos="50" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Marble Zone 2" txt_descricao="Termine Marble Zone Act 2" num_pontos="60" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Marble Zone 3" txt_descricao="Termine Marble Zone Act 3" num_pontos="70" id_jogo="1" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Marble Zone Time Attack" txt_descricao="Termine Marble Zone em menos de 2 minutos" num_pontos="350" id_jogo="1" id_administrador="1"/>
+    
+    <TB_CONQUISTA txt_nome="Mission 1" txt_descricao="Complete a Mission 1" num_pontos="100" id_jogo="7" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Mission 2" txt_descricao="Complete a Mission 2" num_pontos="100" id_jogo="7" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Mission 3" txt_descricao="Complete a Mission 3" num_pontos="100" id_jogo="7" id_administrador="1"/>    
+    <TB_CONQUISTA txt_nome="Mission 1 Complete" txt_descricao="Complete a Mission 1 salvando todos os tiozinhos" num_pontos="300" id_jogo="7" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Mission 2 Complete" txt_descricao="Complete a Mission 2 salvando todos os tiozinhos" num_pontos="300" id_jogo="7" id_administrador="1"/>
+    <TB_CONQUISTA txt_nome="Mission 3 Complete" txt_descricao="Complete a Mission 3 salvando todos os tiozinhos" num_pontos="300" id_jogo="7" id_administrador="1"/>
+    
+    <TB_CONQUISTA txt_nome="Perfect" txt_descricao="Vença um round de perfect" num_pontos="150" id_jogo="8" id_administrador="1"/>  
+    <TB_CONQUISTA txt_nome="Super Samurai" txt_descricao="Vença um round em até 10 segundos" num_pontos="150" id_jogo="8" id_administrador="1"/>  
+    <TB_CONQUISTA txt_nome="Grappler" txt_descricao="Vença um round apenas agarrando o oponente" num_pontos="175" id_jogo="8" id_administrador="1"/>  
+    <TB_CONQUISTA txt_nome="Katana" txt_descricao="Vença um round usando apenas os botões de arma" num_pontos="200" id_jogo="8" id_administrador="1"/>  
+    <TB_CONQUISTA txt_nome="Taekwondo" txt_descricao="Vença um round usando apenas os botões de chute" num_pontos="250" id_jogo="8" id_administrador="1"/>  
+    <TB_CONQUISTA txt_nome="ULTIMATE" txt_descricao="Zere o jogo no expert, sem tomar dano, usando apenas um botão com os olhos fechados e de costas" num_pontos="10000" id_jogo="8" id_administrador="1"/>  
+ 
+    <TB_JOGADORES_CONQUISTAS id_jogador="1" id_conquista="1"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="1" id_conquista="2"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="1" id_conquista="3"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="1" id_conquista="5"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="1" id_conquista="6"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="1" id_conquista="7"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="2" id_conquista="10"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="2" id_conquista="11"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="2" id_conquista="12"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="2" id_conquista="13"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="2" id_conquista="14"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="2" id_conquista="15"/>
+    
+    <TB_JOGADORES_CONQUISTAS id_jogador="3" id_conquista="16"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="3" id_conquista="18"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="3" id_conquista="1"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="3" id_conquista="2"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="3" id_conquista="3"/>
+    <TB_JOGADORES_CONQUISTAS id_jogador="3" id_conquista="4"/>
+</dataset>
