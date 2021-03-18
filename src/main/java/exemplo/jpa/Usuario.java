@@ -30,6 +30,7 @@ import javax.validation.constraints.Size;
 public abstract class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    protected Integer id;
     protected Integer id;
     
     @NotBlank

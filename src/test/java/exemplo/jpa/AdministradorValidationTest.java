@@ -10,6 +10,7 @@ import javax.validation.ConstraintViolationException;
 import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
@@ -26,6 +27,7 @@ public class AdministradorValidationTest extends Teste {
             administrador.setSenha("testesenhainvalida");//senha inválida
             administrador.setDataUltimoLogin(new Date());
             administrador.setDataCriacao(new Date());
+            administrador.setId(15);
            
             em.persist(administrador);
             em.flush();  
@@ -43,10 +45,7 @@ public class AdministradorValidationTest extends Teste {
                 );
             });
             assertEquals(3,contraintViolations.size());
-//            assertNull(administrador.getId()); 
-System.out.println("teste_assertnull:  "+ administrador.getId());
-
-
+            assertNotNull(administrador.getId()); 
             throw ex;
         }
     }
