@@ -40,7 +40,7 @@ public abstract class Usuario implements Serializable {
     protected String nickname;
     
     @NotBlank
-    @Email
+    @Email (message = "{exemplo.jpa.Usuario.email}")
     @Column(name = "TXT_EMAIL", length = 30, nullable = false)
     protected String email;
     

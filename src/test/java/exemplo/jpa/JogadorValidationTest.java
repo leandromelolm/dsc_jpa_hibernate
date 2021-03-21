@@ -36,8 +36,8 @@ public class JogadorValidationTest extends Teste {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
                                 startsWith("class exemplo.jpa.Jogador.nickname: Deve possuir letras minúsculas e ao menos 5 caracteres"),
-                                startsWith("class exemplo.jpa.Jogador.email: deve ser um endereço de e-mail bem formado"),
-                                startsWith("class exemplo.jpa.Jogador.senha: A senha deve possuir entre 8 e 12 caracteres e pelo menos um caractere de: pontuação, maiúscula, minúscula e número")
+                                startsWith("class exemplo.jpa.Jogador.email: Deve ser um endereço de e-mail com formato válido"),
+                                startsWith("class exemplo.jpa.Jogador.senha: A senha deve possuir entre 8 e 20 caracteres e pelo menos um caractere de: pontuação, maiúscula, minúscula e número")
                                 
                         )    
                 );
@@ -59,7 +59,7 @@ public class JogadorValidationTest extends Teste {
             em.flush();
         } catch (ConstraintViolationException ex) {    
             ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
-            assertEquals("A senha deve possuir entre 8 e 12 caracteres e pelo menos um caractere de: pontuação, maiúscula, minúscula e número.", violation.getMessage());
+            assertEquals("A senha deve possuir entre 8 e 20 caracteres e pelo menos um caractere de: pontuação, maiúscula, minúscula e número.", violation.getMessage());
             assertEquals(1, ex.getConstraintViolations().size());
             throw ex;
         }
