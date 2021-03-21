@@ -45,8 +45,9 @@ public abstract class Usuario implements Serializable {
     protected String email;
     
     @NotBlank
-    @Size(min = 8, max = 20)
-    @Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{8,20})", 
+    @Size(min = 8, max = 12, message = "{exemplo.jpa.Usuario.senha}") 
+//    @Size(min = 8, max = 12) 
+    @Pattern(regexp = "((?=.*\\p{Digit})(?=.*\\p{Lower})(?=.*\\p{Upper})(?=.*\\p{Punct}).{8,12})", 
             message = "{exemplo.jpa.Usuario.senha}")
     @Column(name = "TXT_SENHA")
     protected String senha;

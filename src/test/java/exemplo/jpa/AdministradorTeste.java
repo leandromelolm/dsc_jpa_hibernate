@@ -15,7 +15,7 @@ public class AdministradorTeste extends Teste {
         Administrador administrador = new Administrador();
         administrador.setNickname("adminmortal");
         administrador.setEmail("adminmortal@gmail.com");
-        administrador.setSenha("M0RT4LK0MB4t$");
+        administrador.setSenha("M0RT4LK0M4t$");
         administrador.setDataCriacao(new Date());
         administrador.setDataUltimoLogin(new Date());
         em.persist(administrador);
