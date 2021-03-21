@@ -7,6 +7,8 @@ import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import javax.validation.Validation;
+import javax.validation.Validator;
 import org.hamcrest.CoreMatchers;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertEquals;
@@ -44,6 +46,15 @@ public class AdministradorValidationTest extends Teste {
                         )    
                 );
             });
+            Validator validador = Validation.buildDefaultValidatorFactory().getValidator();
+            Set<ConstraintViolation<Administrador>> erros = validador.validate(administrador);
+                if (erros.size() > 0){
+                for (ConstraintViolation<Administrador> erro : erros){
+                    System.out.println("imprimindo erro Constraint VIolation" + erro.getRootBeanClass() +"       "  + erro.getPropertyPath() +  "      " +erro.getMessage() );
+                }
+                }
+            
+            
             assertEquals(3,contraintViolations.size());
             assertNotNull(administrador.getId()); 
             throw ex;

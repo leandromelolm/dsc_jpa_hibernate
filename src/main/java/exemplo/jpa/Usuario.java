@@ -44,7 +44,7 @@ public abstract class Usuario implements Serializable {
     @Column(name = "TXT_EMAIL", length = 30, nullable = false)
     protected String email;
     /*
-    Senha estã com duas retrições: Quantidade de caracteres e Obrigatoriedade de caracteres
+    Senha está com duas retrições: Quantidade de caracteres e Obrigatoriedade de caracteres
     */
     @NotBlank
     @Size(min = 8, max = 12, message = "{exemplo.jpa.Usuario.senha}")  

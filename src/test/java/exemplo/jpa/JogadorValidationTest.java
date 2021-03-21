@@ -3,6 +3,7 @@ package exemplo.jpa;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
@@ -14,10 +15,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
-public class JogadorValidationTest extends Teste {   
-    
+public class JogadorValidationTest extends Teste {
+
     @Test(expected = ConstraintViolationException.class)
-    public void persistirJogadorInvalido(){
+    public void persistirJogadorInvalido() {
         Jogador jogador = null;
         try {
             jogador = new Jogador();
@@ -26,35 +27,47 @@ public class JogadorValidationTest extends Teste {
             jogador.setSenha("testesenha!invalido");//senha inválida por dois motivos. 1- caracteres acima do permitido 2- falta caracteres (Numero e Maiúsculo)
             jogador.setDataUltimoLogin(new Date());
             jogador.setDataCriacao(new Date());
-           
+
             em.persist(jogador);
-            em.flush();  
+            em.flush();
         } catch (ConstraintViolationException ex) {
             Set<ConstraintViolation<?>> contraintViolations = ex.getConstraintViolations();
-            
+
             contraintViolations.forEach(violation -> {
                 assertThat(violation.getRootBeanClass() + "." + violation.getPropertyPath() + ": " + violation.getMessage(),
                         CoreMatchers.anyOf(
                                 startsWith("class exemplo.jpa.Jogador.nickname: Deve possuir letras minúsculas e ao menos 5 caracteres"),
                                 startsWith("class exemplo.jpa.Jogador.email: Deve ser um endereço de e-mail com formato válido"),
                                 startsWith("class exemplo.jpa.Jogador.senha: A senha deve possuir entre 8 e 12 caracteres e pelo menos um caractere de: pontuação, maiúscula, minúscula e número")
-                                
-                        )    
+                        )
                 );
             });
+
+            Set<ConstraintViolation<?>> listaConstraintViolation = ex.getConstraintViolations();
+            
+            for (ConstraintViolation constraintViolations : listaConstraintViolation) {
+                System.out.println("teste erro ConstraintViolation:   "+ constraintViolations.getMessage());
+            }
+
             /*
             assertEquals com com o valor esperado de 4. 
             nome invalido
             email invalido
             senha Quantidade de caracteres invalido
             senha obrigatoriedade de caracteres inválidos
-            */
-            assertEquals(4,contraintViolations.size()); 
+             */
+            assertEquals(4, contraintViolations.size());
+            
+            Set<ConstraintViolation<?>> listaRestricoesViolacoes = ex.getConstraintViolations();
+            
+            for (ConstraintViolation cv : listaRestricoesViolacoes){
+                System.out.println("Teste erros contains: " + contraintViolations.contains(cv));
+            }
             throw ex;
         }
     }
-    
-        @Test(expected = ConstraintViolationException.class)
+
+    @Test(expected = ConstraintViolationException.class)
     public void atualizarJogadorInvalido() {
         TypedQuery<Jogador> query = em.createQuery("SELECT j FROM Jogador j WHERE j.nickname like :nickname", Jogador.class);
         query.setParameter("nickname", "zxasddd");
@@ -63,7 +76,7 @@ public class JogadorValidationTest extends Teste {
 
         try {
             em.flush();
-        } catch (ConstraintViolationException ex) {    
+        } catch (ConstraintViolationException ex) {
             ConstraintViolation violation = ex.getConstraintViolations().iterator().next();
             assertEquals("A senha deve possuir entre 8 e 12 caracteres e pelo menos um caractere de: pontuação, maiúscula, minúscula e número", violation.getMessage());
             assertEquals(1, ex.getConstraintViolations().size());
