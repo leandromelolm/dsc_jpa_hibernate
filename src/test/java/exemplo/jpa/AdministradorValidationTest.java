@@ -24,7 +24,7 @@ public class AdministradorValidationTest extends Teste {
             administrador = new Administrador();
             administrador.setNickname("Eduard0");//Nome inválido (precisa de no minimo 5 caracteres e letras minúsculas)
             administrador.setEmail("email_invalido@");//email inválido
-            administrador.setSenha("testesenhainvalida");//senha inválida
+            administrador.setSenha("testesenha");//senha inválida
             administrador.setDataUltimoLogin(new Date());
             administrador.setDataCriacao(new Date());
             administrador.setId(15);
@@ -44,7 +44,7 @@ public class AdministradorValidationTest extends Teste {
                         )    
                 );
             });
-            assertEquals(4,contraintViolations.size());
+            assertEquals(3,contraintViolations.size());
             assertNotNull(administrador.getId()); 
             throw ex;
         }

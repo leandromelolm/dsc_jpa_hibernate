@@ -23,7 +23,7 @@ public class JogadorValidationTest extends Teste {
             jogador = new Jogador();
             jogador.setNickname("Alfonso");//Nome inválido (precisa de no minimo 5 caracteres e letras minúsculas)
             jogador.setEmail("email_invalido@");//email inválido
-            jogador.setSenha("testesenhainvalida");//senha inválida
+            jogador.setSenha("testesenha!invalido");//senha inválida por dois motivos. 1- caracteres acima do permitido 2- falta caracteres (Numero e Maiúsculo)
             jogador.setDataUltimoLogin(new Date());
             jogador.setDataCriacao(new Date());
            
@@ -42,8 +42,14 @@ public class JogadorValidationTest extends Teste {
                         )    
                 );
             });
-            assertEquals(4,contraintViolations.size());
-//            assertNull(jogador.getId()); 
+            /*
+            assertEquals com com o valor esperado de 4. 
+            nome invalido
+            email invalido
+            senha Quantidade de caracteres invalido
+            senha obrigatoriedade de caracteres inválidos
+            */
+            assertEquals(4,contraintViolations.size()); 
             throw ex;
         }
     }
